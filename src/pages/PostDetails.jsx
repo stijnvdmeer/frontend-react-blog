@@ -5,7 +5,7 @@ import formatDateTime from '../helperfunctions/formatDateTime';
 
 export default function PostDetails() {
     const { id } = useParams();
-    const post = data[id];
+    const post = data[id - 1];
 
     return (
         <div className="post-details">
