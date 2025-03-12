@@ -1,0 +1,10 @@
+.areainput {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+    textarea {
+        height: 10em;
+        border-radius: 8px;
+    }
+}
