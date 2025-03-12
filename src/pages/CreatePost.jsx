@@ -6,19 +6,16 @@ import {useNavigate} from "react-router-dom";
 
 import calculateReadTime from "../helperfunctions/calculateReadTime.js";
 
-export default function CreatePost() {
+export default function CreatePost({data, changeDataFunction}) {
     const presetInputMap = new Map();
     presetInputMap.set("title", "");
     presetInputMap.set("subtitle", "");
     presetInputMap.set("fullname", "");
     presetInputMap.set("blogpost", "");
-    presetInputMap.set("created", "");
-    presetInputMap.set("comments", "");
-    presetInputMap.set("reactions", "");
-    presetInputMap.set("readTime", "");
 
     const nav = useNavigate();
     const [formData, setFormData] = useState(presetInputMap);
+
 
     function handleInputChange(value, target) {
 
@@ -30,16 +27,27 @@ export default function CreatePost() {
 
     function handleSubmit() {
         const date = new Date();
-        let newInput = new Map(formData);
 
-        newInput.set("created", date.toISOString());
-        newInput.set("comments", 0);
-        newInput.set("reactions", 0);
-        newInput.set("readTime", calculateReadTime(newInput.get("blogpost")));
-
-        setFormData(newInput);
+        setFormData(formData.set("created", date.toISOString()));
+        setFormData(formData.set("readTime", calculateReadTime(formData.get("blogpost"))));
+        setFormData(formData.set("comments", 0));
+        setFormData(formData.set("shares", 0));
 
         console.log(formData);
+
+        const newData = data;
+        newData.push({id: 18,
+            title: formData.get("title"),
+            subtitle: formData.get("subtitle"),
+            content: formData.get("blogpost") ,
+            created: formData.get("created"),
+            author: formData.get("fullname"),
+            readTime: formData.get("readTime"),
+            comments: formData.get("comments"),
+            shares: formData.get("shares"), });
+
+        changeDataFunction(newData);
+
         nav("/posts");
     }
 
