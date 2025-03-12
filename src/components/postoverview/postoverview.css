@@ -1,0 +1,25 @@
+.postoverview {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    padding: 1rem;
+    margin: 2rem;
+
+
+}
+
+.title {
+    color: forestgreen;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.link {
+    text-decoration: none;
+    color: black;
+}

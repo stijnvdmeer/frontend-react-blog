@@ -1,0 +1,10 @@
+.textinput {
+    display:flex;
+    flex-direction: column;
+    margin: 5px;
+
+    input {
+        height: 30px;
+        border-radius: 7px;
+    }
+}
