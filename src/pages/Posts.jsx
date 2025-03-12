@@ -12,7 +12,7 @@ export default function Posts() {
                         id={post.id}
                         title={post.title}
                         author={post.author}
-                        reactions={post.reactions}
+                        reactions={post.comments}
                         shares={post.shares}
                     />
                 ))
