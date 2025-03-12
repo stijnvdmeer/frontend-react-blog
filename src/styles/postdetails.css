@@ -1,0 +1,15 @@
+.post-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.post-details__link {
+    text-decoration: none;
+    color: lightgreen;
+    font-weight: bold;
+}
+.readtime {
+    font-style: italic;
+    font-weight: lighter;
+}
