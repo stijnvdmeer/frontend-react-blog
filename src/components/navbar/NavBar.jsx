@@ -18,7 +18,7 @@ export default function NavBar() {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/postoverview"
+                        <NavLink to="/posts"
                                  className={({ isActive }) => isActive ? 'active-menu-link' : 'default-menu-link'}
                         >
                             Alle Posts

@@ -1,7 +1,7 @@
 import './styles/App.css'
 import Home from "./pages/Home.jsx";
 import {Routes, Route} from "react-router-dom";
-import PostOverview from "./pages/PostOverview.jsx";
+import Posts from "./pages/Posts.jsx";
 import CreatePost from "./pages/CreatePost.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import NavBar from "./components/navbar/NavBar.jsx";
@@ -12,7 +12,7 @@ function App() {
             <NavBar className="navigation" />
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/postoverview" element={<PostOverview />} />
+                <Route path="/posts" element={<Posts />} />
                 <Route path="/createpost" element={<CreatePost />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
