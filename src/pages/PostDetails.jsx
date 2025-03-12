@@ -1,9 +1,8 @@
 import '../styles/postdetails.css';
 import {Link, useParams} from 'react-router-dom';
-import data from '../constants/data.json';
 import formatDateTime from '../helperfunctions/formatDateTime';
 
-export default function PostDetails() {
+export default function PostDetails({data}) {
     const { id } = useParams();
     const post = data[id - 1];
 
