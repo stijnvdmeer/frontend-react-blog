@@ -1,6 +1,7 @@
 import TextInput from "../components/inputs/textinput/TextInput.jsx";
 import AreaInput from "../components/inputs/areainput/AreaInput.jsx";
 import {useState} from "react";
+import calculateReadTime from "../helperfunctions/calculateReadTime.js";
 
 export default function CreatePost() {
     const presetInputMap = new Map();
@@ -8,6 +9,10 @@ export default function CreatePost() {
     presetInputMap.set("subtitle", "");
     presetInputMap.set("fullname", "");
     presetInputMap.set("blogpost", "");
+    presetInputMap.set("created", "");
+    presetInputMap.set("comments", "");
+    presetInputMap.set("reactions", "");
+    presetInputMap.set("readTime", "");
 
     const [formData, setFormData] = useState(presetInputMap);
 
@@ -20,6 +25,16 @@ export default function CreatePost() {
     }
 
     function handleSubmit() {
+        const date = new Date();
+        let newInput = new Map(formData);
+
+        newInput.set("created", date.toISOString());
+        newInput.set("comments", 0);
+        newInput.set("reactions", 0);
+        newInput.set("readTime", calculateReadTime(newInput.get("blogpost")));
+
+        setFormData(newInput);
+
         console.log(formData)
     }
 
