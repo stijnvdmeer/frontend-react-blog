@@ -1,7 +1,7 @@
-import data from '../constants/data.json';
+
 import PostOverview from "../components/postoverview/PostOverview.jsx";
 
-export default function Posts() {
+export default function Posts({data}) {
     return (
         <div>
             <h1>Bekijk alle {data.length} posts op het platform</h1>
