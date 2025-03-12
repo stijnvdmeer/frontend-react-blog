@@ -1,11 +1,21 @@
-import './App.css'
-import logo from './assets/logo-white.png'
+import './styles/App.css'
+import Home from "./pages/Home.jsx";
+import {Routes, Route} from "react-router-dom";
+import PostOverview from "./pages/PostOverview.jsx";
+import CreatePost from "./pages/CreatePost.jsx";
+import NotFound from "./pages/NotFound.jsx";
+import NavBar from "./components/navbar/NavBar.jsx";
 
 function App() {
     return (
         <div className="page-container">
-            <img src={logo} alt="Company logo"/>
-            <h1>Begin hier met het maken van jouw blog-applicatie!</h1>
+            <NavBar className="navigation" />
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/postoverview" element={<PostOverview />} />
+                <Route path="/createpost" element={<CreatePost />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </div>
     )
 }
