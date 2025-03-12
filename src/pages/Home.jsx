@@ -1,7 +1,7 @@
 export default function Home() {
     return (
         <div>
-            Home!
+            Dit is een hele mooie homepage &#128517;
         </div>
     )
 }
