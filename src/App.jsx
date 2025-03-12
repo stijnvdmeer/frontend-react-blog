@@ -12,7 +12,7 @@ function App() {
             <NavBar className="navigation" />
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/posts" element={<Posts />} />
+                <Route path="/posts/:id" element={<Posts />} />
                 <Route path="/createpost" element={<CreatePost />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
