@@ -1,4 +1,4 @@
-import data from '../constants/data.json'
+import data from '../constants/data.json';
 import PostOverview from "../components/postoverview/PostOverview.jsx";
 
 export default function Posts() {
