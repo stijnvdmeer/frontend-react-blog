@@ -10,10 +10,16 @@
 
     padding: 1rem;
     margin: 2rem;
+
+
 }
 
 .title {
     color: forestgreen;
     font-size: 1rem;
     font-weight: bold;
+}
+.link {
+    text-decoration: none;
+    color: black;
 }
