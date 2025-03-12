@@ -9,14 +9,18 @@ export default function CreatePost() {
     presetInputMap.set("fullname", "");
     presetInputMap.set("blogpost", "");
 
-    const [input, setInput] = useState(presetInputMap);
+    const [formData, setFormData] = useState(presetInputMap);
 
     function handleInputChange(value, target) {
 
-        let newInput = new Map(input);
+        let newInput = new Map(formData);
         newInput.set(target, value);
 
-        setInput(newInput);
+        setFormData(newInput);
+    }
+
+    function handleSubmit() {
+        console.log(formData)
     }
 
     return (
@@ -26,25 +30,25 @@ export default function CreatePost() {
                 <TextInput
                     fieldName="title"
                     fieldText="Title"
-                    fieldValue={input.get("title")}
+                    fieldValue={formData.get("title")}
                     onChangeFunc={handleInputChange}
                 />
                 <TextInput
                     fieldName="subtitle"
                     fieldText="Subtitle"
-                    fieldValue={input.get("subtitle")}
+                    fieldValue={formData.get("subtitle")}
                     onChangeFunc={handleInputChange}
                 />
                 <TextInput
                     fieldName="fullname"
                     fieldText="First and last name"
-                    fieldValue={input.get("fullname")}
+                    fieldValue={formData.get("fullname")}
                     onChangeFunc={handleInputChange}
                 />
                 <AreaInput
                     fieldName="blogpost"
                     fieldText="Blogpost"
-                    fieldValue={input.get("blogpost")}
+                    fieldValue={formData.get("blogpost")}
                     onChangeFunc={handleInputChange}
                 />
                 <input type="submit" value="Toevoegen" onClick={(e) => {
