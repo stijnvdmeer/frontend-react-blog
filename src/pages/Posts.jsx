@@ -10,6 +10,7 @@ export default function Posts() {
                 data.map(post => (
                     <PostOverview
                         key={post.id}
+                        id={post.id}
                         title={post.title}
                         author={post.author}
                         reactions={post.reactions}
