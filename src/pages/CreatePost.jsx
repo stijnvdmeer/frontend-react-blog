@@ -1,6 +1,9 @@
 import TextInput from "../components/inputs/textinput/TextInput.jsx";
 import AreaInput from "../components/inputs/areainput/AreaInput.jsx";
+
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+
 import calculateReadTime from "../helperfunctions/calculateReadTime.js";
 
 export default function CreatePost() {
@@ -14,6 +17,7 @@ export default function CreatePost() {
     presetInputMap.set("reactions", "");
     presetInputMap.set("readTime", "");
 
+    const nav = useNavigate();
     const [formData, setFormData] = useState(presetInputMap);
 
     function handleInputChange(value, target) {
@@ -35,7 +39,8 @@ export default function CreatePost() {
 
         setFormData(newInput);
 
-        console.log(formData)
+        console.log(formData);
+        nav("/posts");
     }
 
     return (
